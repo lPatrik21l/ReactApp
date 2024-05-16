@@ -1,4 +1,4 @@
-import { formatValue } from "../utils/formatValue";
+import { formatValue } from "../../utils/formatValue";
 
 const CountryPicker = ({ availableCountries, chooseACountry }) => {
   return (

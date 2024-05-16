@@ -1,4 +1,4 @@
-import useFetchApi from "../utils/useFetchApi";
+import useFetchApi from "../../utils/useFetchApi";
 import TableBody from "./TableBody";
 
 const TableHead = ({ country }) => {
