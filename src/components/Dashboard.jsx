@@ -5,12 +5,9 @@ import DummyText from "./EconomicSearch/DummyText";
 const Dashboard = () => {
   return (
     <div>
-      {/* <h2>
-         Please Pick a <span>Topic</span>
-        </h2> */}
       <div className="flex flex-col items-center justify-center ">
         <p className="font-bold text-4xl mb-4 text-center">
-          Please Pick a
+          Please Select a
           <span className="text-lime-700 mx-1 font-extrabold text-4xl relative inline-block stroke-current">
             Topic
             <svg
