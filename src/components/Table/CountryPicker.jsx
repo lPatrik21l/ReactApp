@@ -9,7 +9,7 @@ const CountryPicker = ({ availableCountries, chooseACountry }) => {
       <select
         name="countryPicker"
         id="countryPicker"
-        defaultValue={countryFromLocalStorage || ""}
+        defaultValue={countryFromLocalStorage || "sweden"}
       >
         {Object.values(availableCountries).map((country) => {
           return (

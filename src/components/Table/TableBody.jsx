@@ -1,22 +1,25 @@
 const TableBody = ({ data, error, loading }) => {
   let content;
+  let text;
   if (loading) {
+    text = "Loading data...";
     content = (
       <tr className="tableBodyRow">
         <th scope="row" className="rowHeader">
-          Loading data...
+          {text}
         </th>
-        <td> Loading data...</td>
+        <td> {text}</td>
       </tr>
     );
   } else if (error) {
+    text = "Something went wrong, please try again later...";
     console.log(error);
     content = (
       <tr className="tableBodyRow">
         <th scope="row" className="rowHeader">
-          Something went wrong, please try again later...
+          {text}
         </th>
-        <td> Something went wrong, please try again later...</td>
+        <td>{text}</td>
       </tr>
     );
   } else if (data && data.length > 0) {
