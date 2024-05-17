@@ -13,7 +13,7 @@ const EconomicSearch = () => {
       fetchData(
         "https://brains.tradingeconomics.com/v2/search/wb,fred,comtrade?q=thailand&pp=16&p=0&_=1557934352427&stance=2"
       ),
-    staleTime: 20 * 60 * 1000,
+    staleTime: 1 * 24 * 60 * 60 * 1000,
   });
   //fnc redirect
   const redirectToDetail = (detail) => {
