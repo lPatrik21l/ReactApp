@@ -1,44 +1,77 @@
-import EconomicSearch from "./components/EconomicSearch/EconomicSearch";
+import { lazy, Suspense } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import DashboardLayout from "./components/DashboardLayout";
-import Dashboard from "./components/Dashboard";
-import Table from "./components/Table/Table";
-import EconomicDetails from "./components/EconomicSearch/EconomicDetails";
+
+const EconomicSearch = lazy(() =>
+  import("./components/EconomicSearch/EconomicSearch")
+);
+const DashboardLayout = lazy(() => import("./components/DashboardLayout"));
+const Dashboard = lazy(() => import("./components/Dashboard"));
+const Table = lazy(() => import("./components/Table/Table"));
+const EconomicDetails = lazy(() =>
+  import("./components/EconomicSearch/EconomicDetails")
+);
 
 //loaders
-import { loader as economicLoader } from "./components/EconomicSearch/EconomicSearch";
+// import { loader as economicLoader } from "./components/EconomicSearch/EconomicSearch";
+
+import { Loader as Loading } from "./Loader/Loader";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DashboardLayout />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <DashboardLayout />
+      </Suspense>
+    ),
     children: [
       {
         index: true,
-        element: <Dashboard />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Dashboard />
+          </Suspense>
+        ),
       },
       {
         path: "table",
-        element: <Table />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Table />
+          </Suspense>
+        ),
       },
       {
         path: "economicSearch",
-        element: <EconomicSearch />,
-        loader: economicLoader,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <EconomicSearch />
+          </Suspense>
+        ),
+        // loader: economicLoader,
       },
       {
         path: "economicSearch/:id",
-        element: <EconomicDetails />,
-        loader: economicLoader,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <EconomicDetails />
+          </Suspense>
+        ),
+        // loader: economicLoader,
       },
     ],
   },
 ]);
 const App = () => {
   return (
-    <RouterProvider router={router}>
-      <div>Trading Economics</div>
-    </RouterProvider>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router}>
+        <div>Trading Economics</div>
+      </RouterProvider>
+    </QueryClientProvider>
   );
 };
 
