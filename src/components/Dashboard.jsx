@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import main from "../assets/undraw_all_the_data_re_hh4w.svg";
-import Text from "./EconomicSearch/Text";
+import DummyText from "./EconomicSearch/DummyText";
 
 const Dashboard = () => {
   return (
@@ -43,7 +43,7 @@ const Dashboard = () => {
       </div>
       <div className="flex items-center space-x-10">
         <div className="flex-1 p-4  shadow-lg">
-          <Text />
+          <DummyText />
         </div>
         <img src={main} alt="all the data" className="w-1/2 h-auto" />
       </div>

@@ -5,10 +5,10 @@ const TableBody = ({ data, error, loading }) => {
   if (loading) {
     text = "Loading data...";
     content = (
-      <tr className="border-b border-gray-200 dark:border-gray-700">
+      <tr className="border-b border-gray-500 ">
         <th
           scope="row"
-          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-200 "
         >
           {text}
         </th>
@@ -17,12 +17,11 @@ const TableBody = ({ data, error, loading }) => {
     );
   } else if (error) {
     text = "Something went wrong, please try again later...";
-    console.log(error);
     content = (
-      <tr className="border-b border-gray-200 dark:border-gray-700">
+      <tr className="border-b border-gray-500 ">
         <th
           scope="row"
-          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-200 "
         >
           {text}
         </th>
@@ -32,13 +31,10 @@ const TableBody = ({ data, error, loading }) => {
   } else if (data && data.length > 0) {
     content = data.map((item, index) => {
       return (
-        <tr
-          className="border-b border-gray-200 dark:border-gray-700"
-          key={index}
-        >
+        <tr className="border-b border-gray-500 " key={index}>
           <th
             scope="row"
-            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-200 "
           >
             {item.Category}
           </th>

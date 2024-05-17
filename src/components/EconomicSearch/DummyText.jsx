@@ -1,4 +1,4 @@
-const Text = () => {
+const DummyText = () => {
   return (
     <>
       <h2 className="text-2xl font-semibold mb-4">Lorem</h2>
@@ -25,4 +25,4 @@ const Text = () => {
   );
 };
 
-export default Text;
+export default DummyText;

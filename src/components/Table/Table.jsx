@@ -10,8 +10,6 @@ const Table = () => {
     MEXICO: "mexico",
     THAILAND: "thailand",
   };
-  console.log(country);
-  console.log(countryFromLocalStorage);
 
   useEffect(() => {
     localStorage.setItem("country", country);

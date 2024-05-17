@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../../utils/fetchData";
 import { Loader } from "../../Loader/Loader";
-import Text from "./Text";
+import DummyText from "./DummyText";
 import DetailData from "./DetailData";
 
 const EconomicDetails = () => {
@@ -36,7 +36,7 @@ const EconomicDetails = () => {
   return (
     <div>
       <DetailData detailObj={detailObj}>
-        <Text />
+        <DummyText />
       </DetailData>
     </div>
   );
