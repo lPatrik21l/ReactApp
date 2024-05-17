@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const EconomicSearch = lazy(() =>
